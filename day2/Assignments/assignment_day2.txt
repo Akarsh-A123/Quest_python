@@ -1,0 +1,40 @@
+
+1) The alternative implementation of function overloading in Python
+
+ 	1.Default Arguments
+	You can use default arguments to handle different numbers of parameters. 
+	This allows you to call the function with different arguments and have the function handle each case appropriately.
+
+	2. Variable-Length Arguments
+	You can use *args and **kwargs to handle an arbitrary number of positional and keyword arguments. 
+	This gives you flexibility to handle different types of input
+
+2) Why there is no implicit type casting in Python ?
+    
+	python supports implicit type casting for numeric types eg is you add an integer and floating point numbers
+	python promotes the integer to float poin number to prevent data loss
+
+
+4. Why there is no ++ and -- (increment/decrement) operators in Python ?
+
+	Python's design philosophy emphasizes readability and simplicity, 
+	and this approach influences the decision to not include increment (++) and decrement (--) operators. 
+
+5. syntax for switch cases in python
+	match term:
+    case pattern-1:
+         action-1
+    case pattern-2:
+         action-2
+    case pattern-3:
+         action-3
+    case _:
+        action-default
+
+6. 8. Can the key within a dictionary be a composite value like a list or tuple, 
+	or should it be an atomic value such as number or string?
+	
+	only tuble can be used as a key in python as composite value 
+	
+
+	
