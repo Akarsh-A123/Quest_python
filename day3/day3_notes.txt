@@ -1,0 +1,225 @@
+#Program to print X shape inside a hollow Square
+
+print('Program to print X shape inside Hollow Square')
+number_of_lines = int(input('Enter the number of lines: '))
+for i in range(number_of_lines):
+    for j in range(number_of_lines):
+        if i == 0 or i == number_of_lines-1 or j == 0 or j == number_of_lines-1 or i == j or j == number_of_lines-i-1:
+            print('* ', end='')
+        else:
+            print('  ', end='')
+    print()
+--------------------------------------
+A number is Prime only if it has 2 factors and only 2 factors. 1 is not a Prime number because it has only 1 factor which is itself.
+
+10 is not a Prime number because it has 1, 2, 5 and 10 as factors.
+
+Now to check if a number is Prime, we must divide the number N from 2 to N-1.
+However, we all know that any number (N) is fully divisible (with integer quotient) only by the numbers upto N/2.
+For example, 50 is fully divisible by some number only upto 25.
+However we also observe that a number (N) need to be dfivided by numbers only upto ciel(sqrt(N)) to check if it is Prime.
+If N is 50,
+sqrt(50) is 7.1
+ciel(7.1) is 8
+
+Read N
+prime = true # assume the number N is Prime
+for i from 2 to ciel(sqrt(N)) do:
+	if N % i is 0 then:
+		print N is not Prime number
+		prime = false
+		break the loop
+if prime then:
+	print N is a Prime number
+	
+	
+
+Read N
+count=0
+if N == 1:
+	return 2
+if N == 2:
+	return 3
+j = 4 # We shall check the number in 'j' is Prime on not
+while count <= N:
+	if checkIfPrime(j):
+		count++
+	if count == N:
+	return j
+	j++
+-------------------------------------------------
+#Program to check if a number is Prime
+import math
+
+def check_if_prime(num):
+    for i in range(2, math.ceil(math.sqrt(num))+1):
+        if num % i == 0:
+            return False
+    return True
+
+input_number = int(input('Enter the number N, to print Nth Prime number: '))
+
+j = 0
+if input_number == 1:
+    j = 2
+elif input_number == 2:
+    j = 3
+else:
+    count = 2
+    j = 4 #Number in J is checked if Prime or not
+    while count <= input_number:
+        if check_if_prime(j):
+            count += 1
+        if count == input_number:
+            break
+        j += 1
+print(f'{input_number}th Prime number is {j}')
+------------------------------------
+Program to print the Nth Fibo term (1st Fibo term is 1 and 2nd is 2)
+
+term_number = int(input ("Enter N to print the Nth Fibo term: "))  
+
+def find_nth_fibo_term(n):
+    thrid_number = 0
+    first_number  = 1
+    second_number = 2  
+    if n == 1:
+        thrid_number = 1
+    elif n == 2:
+        thrid_number = 2
+    else:
+        thrid_number  = 0
+        count = 2
+        while count <= n:
+            thrid_number = first_number + second_number
+            count += 1
+            if count == n:
+                return thrid_number
+            first_number = second_number
+            second_number = thrid_number
+    return thrid_number
+
+if term_number <= 0:  
+    print ("Please enter a positive integer, the given number is not valid")
+else: 
+    print (f'The {term_number}th Fibo number is ', find_nth_fibo_term(term_number))
+--------------------------------------------------
+Syllabus:
+Day1 we focused on programming building blocks and pseudocode.
+Day2 was basic problem solving using Python and pseudocode.
+Day3 problem solving on Loops and Arrays (Lists)
+Day4 Python data structures and string and problem solving
+Day5 PDB and Important Python modules like sys, math, numpy
+Day6 Basic searching and sorting Algoriths and OOP.
+------------------------------------------
+Find sum of the series:
+1 - n + n(2) - n(3) + ..... m terms 
+
+i/p: n and m
+n is value of the term and m is number of terms.
+What is the term? n power Zero
+2nd term is n power 1
+
+-1 power Even number is +1
+-1 power Odd  number is -1
+
+Read N
+Read M
+sum_of_terms = 0
+for i in range(0, M):
+	term = (n power i) * (-1 power i)
+	sum += term
+	
+sum = 2 + 7 * 9
+
+sum = 2 ** 3 ** 2
+L->R: 8 ** 2  is 64
+R->L: 2 ** 9  is 512
+
+Remember, the Associtivity of ** operator is R to L
+Hence,
+-1 ** 0 is evaluated like this: -( 1 ** 0) = - (+1) = -1
+(-1) ** 0 is evaluated as it is, hence it is +1
+
+
+Find sum of the series:
+n - n(2)/3 + n(4)/5 - n(8)/7 + ..... upto m terms  and (1<=n<=5) and (2<m<10)
+
+def findSumOfTerms(n, m):
+    sum_of_terms = 0
+    for i in range(1, m+1):
+        numerator = n ** 2 ** i
+        denominator = (2*i-1)
+        term = (numerator/denominator) * ((-1) ** (i-1))
+        sum_of_terms += term
+
+
+number_of_terms = int(input('Enter number of terms of the series (>= 2 and < 10): '))
+
+term_base_value = int(input('Enter base value of every term: '))
+
+sum_of_terms = findSumOfTerms(term_base_value, number_of_terms)
+
+print(f'Sum of th terms is {sum_of_terms}')
+---------------------------------------------------
+Array/List Problems:
+
+def print_list(numbers):
+    for element in numbers:
+        print(element)
+
+def modify_list1(numbers):
+    for element in numbers:
+        element = element + 1
+
+def modify_list2(numbers):
+    for i in range(len(numbers)):
+        numbers[i] = numbers[i] - 1
+
+numbers1 = [] # one way to create an empty list
+numbers2 = list() # one way to create an empty list
+numbers3 = [2, 4, '5', ['abc', 'xyz'], 5.5] # one way to create an list
+# numbers4 = list(1, 2, 4, '7', 5.5) # one way to create an empty list
+numbers5 = [1, 2, 4, 7, 5.5]
+numbers4 = list(numbers5)
+print_list(numbers4)
+print('Numbers3 List is ', numbers3)
+print('Before modification, numbers5 = ', numbers5)
+print('Before modification, numbers4 = ', numbers4)
+modify_list1(numbers5)
+modify_list2(numbers4)
+print('After modification, numbers5 = ', numbers5)
+print('After modification, numbers4 = ', numbers4)
+
+print('numbers3 2nd element = ', numbers3[1])
+print('numbers3 4th element = ', numbers3[3])
+print('numbers3 1st element in 4th element = ', numbers3[3][0])
+
+Assignment:
+Go to the Python docs and read and learn all the methods of list class.
+G search: python list methods python docs
+
+squares = []
+for i in range(10):
+	squares.append(i * i)
+print('Squares = ', squares)
+--------------------------
+List Comprehension
+[x**2 for x in range(10)]
+
+step1: [ ]
+We are saying, we need a list
+
+step2: x ** 2
+elements of the list will be x ** 2
+
+step3: for x in range(10)
+values for x will be supplied from the for loop
+-----------------------------
+squares2 = [x**2 for x in range(10)]
+print('Squares2 = ', squares2)
+--------------------------------------
+Using Map and Lambda Function:
+
+squares3 = list(map(lambda x: x**2, range(10)))
+print('Squares3 = ', squares3)
