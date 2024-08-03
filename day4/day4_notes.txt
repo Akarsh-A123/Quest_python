@@ -1,49 +1,3 @@
-
-#List methods
-
-list.append(x)
-Add an item to the end of the list. 
-Equivalent to a[len(a):] = [x].
-
-list.extend(iterable)
-Extend the list by appending all the items from the iterable. 
-Equivalent to a[len(a):] = iterable.
-
-list.insert(i, x)
-Insert an item at a given position. The first argument is the index of the element before which to insert, 
-so a.insert(0, x) inserts at the front of the list, and a.insert(len(a), x) is equivalent to a.append(x).
-
-list.remove(x)
-Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
-
-list.pop([i])
-Remove the item at the given position in the list, and return it. If no index is specified, 
-a.pop() removes and returns the last item in the list. 
-It raises an IndexError if the list is empty or the index is outside the list range.
-
-list.clear()
-Remove all items from the list. Equivalent to del a[:].
-
-list.index(x[, start[, end]])
-Return zero-based index in the list of the first item whose value is equal to x. Raises a ValueError if there is no such item.
-The optional arguments start and end are interpreted as in the slice notation and are used to limit 
-the search to a particular subsequence of the list. 
-The returned index is computed relative to the beginning of the full sequence rather than the start argument.
-
-list.count(x)
-Return the number of times x appears in the list.
-
-list.sort(*, key=None, reverse=False)
-Sort the items of the list in place (the arguments can be used for sort customization, see sorted() for their explanation).
-key :function we can mention how to sort the list
-list.reverse()
-Reverse the elements of the list in place.
-
-list.copy()
-Return a shallow copy of the list. Equivalent to a[:].
-
-
-
 List Slicing:
 
 numbers = [2, 9, 7, 5, 3, 13, 19, 17, 29]
@@ -68,6 +22,52 @@ So, start from last possible index, go upto index 1, with decrement of 2
 
 When ever we mention the increment as -ve and also, we have not mentioned where to start from, then Python always considers the start as the last element.
 And hence we get the answer here as [3]
+
+########################################################
+#List methods
+
+1 list.append(x)
+Add an item to the end of the list. 
+Equivalent to a[len(a):] = [x].
+
+2 list.split() splits the list  based on a seperator  it returns a list 
+
+3 list.extend(iterable)
+Extend the list by appending all the items from the iterable. 
+Equivalent to a[len(a):] = iterable.
+
+4 list.insert(i, x)
+Insert an item at a given position. The first argument is the index of the element before which to insert, 
+so a.insert(0, x) inserts at the front of the list, and a.insert(len(a), x) is equivalent to a.append(x).
+
+5 list.remove(x)
+Remove the first item from the list whose value is equal to x. It raises a ValueError if there is no such item.
+
+6 list.pop([i])
+Remove the item at the given position in the list, and return it. If no index is specified, 
+a.pop() removes and returns the last item in the list. 
+It raises an IndexError if the list is empty or the index is outside the list range.
+
+7 list.clear()
+Remove all items from the list. Equivalent to del a[:].
+
+8 list.index(x[, start[, end]])
+Return zero-based index in the list of the first item whose value is equal to x. Raises a ValueError if there is no such item.
+The optional arguments start and end are interpreted as in the slice notation and are used to limit 
+the search to a particular subsequence of the list. 
+The returned index is computed relative to the beginning of the full sequence rather than the start argument.
+
+9 list.count(x)
+Return the number of times x appears in the list.
+
+10 list.sort(*, key=None, reverse=False)
+Sort the items of the list in place (the arguments can be used for sort customization, see sorted() for their explanation).
+key :function we can mention how to sort the list
+11 list.reverse()
+Reverse the elements of the list in place.
+
+12 list.copy()
+Return a shallow copy of the list. Equivalent to a[:].
 
 #################################################################################################
 #Global methods and keywords:
@@ -96,6 +96,16 @@ TypeError because we must assign only a list(itarable) not a primitive value
 4 sorted() returns a duplicate sorted list but donot modify the original list 
 
 ##################################################################################################
+
+we can use relation operators on list object
+l1 = [3,6,9]
+l2 =[1,2,4,12]
+if l1 < l2:
+print('List1 is bigger')
+else:
+print('list2 is bigger')
+
+#############################################################################################
 strings in python
 
 1 string.upper() converts strings to upper case
@@ -106,30 +116,24 @@ it adds spaces and front and back of string to make it center
 5 string.find() return the first specified element in the string
 6 index()	Searches the string for a specified value and returns the position of where it was found
 7 isalnum()	Returns True if all characters in the string are alphanumeric
-isalpha()	Returns True if all characters in the string are in the alphabet
-isascii()	Returns True if all characters in the string are ascii characters
-isdecimal()	Returns True if all characters in the string are decimals
-isdigit()	Returns True if all characters in the string are digits
-isidentifier()	Returns True if the string is an identifier
-islower()	Returns True if all characters in the string are lower case
-isnumeric()	Returns True if all characters in the string are numeric
-isprintable()	Returns True if all characters in the string are printable
-isspace()	Returns True if all characters in the string are whitespaces
-istitle()	Returns True if the string follows the rules of a title
-isupper()	Returns True if all characters in the string are upper case
-join()	Converts the elements of an iterable into a string
-ljust()	Returns a left justified version of the string
-lower()	Converts a string into lower case
-replace()	Returns a string where a specified value is replaced with a specified value
+8 isalpha()	Returns True if all characters in the string are in the alphabet
+9 isascii()	Returns True if all characters in the string are ascii characters
+10 isdecimal()	Returns True if all characters in the string are decimals
+11 isdigit()	Returns True if all characters in the string are digits
+12 isnumeric()	Returns True if all characters in the string are numeric
+13 islower()	Returns True if all characters in the string are lower case
+14 isidentifier()	Returns True if the string is an identifier
+15 isprintable()	Returns True if all characters in the string are printable
+16 isspace()	Returns True if all characters in the string are whitespaces
+17 istitle()	Returns True if the string follows the rules of a title
+18 isupper()	Returns True if all characters in the string are upper case
+19 join()	Converts the elements of an iterable into a string
+20 ljust()	Returns a left justified version of the string
+21 lower()	Converts a string into lower case
+22 replace()	Returns a string where a specified value is replaced with a specified value
+23 endswith() retrun true if a string ends with a particular charactor
 
-#############################################################################################
-we can use relation operators on list object
-l1 = [3,6,9]
-l2 =[1,2,4,12]
-if l1 < l2:
-print('List1 is bigger')
-else:
-print('list2 is bigger')
+
 
 ########################################
 Ds is python
@@ -143,7 +147,7 @@ tuple :ordered and unmutable(we cannot change the elements)
 dictionary : ordered and mutable stored as key value pairs
     eg:dictionary1 = { }
     dictionary2 = dict()
-set: unordered(means we cannot acces items indivually) and unmutable
+set: unordered(means we cannot acces items indivually) and unmutable elements cannot be repeated 
     set1 = set()
     set1 = {}
 

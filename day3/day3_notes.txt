@@ -198,6 +198,8 @@ print('numbers3 1st element in 4th element = ', numbers3[3][0])
 Assignment:
 Go to the Python docs and read and learn all the methods of list class.
 G search: python list methods python docs
+#################################################
+adding elements to list 
 
 squares = []
 for i in range(10):
