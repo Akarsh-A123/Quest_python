@@ -1,5 +1,9 @@
 '''Lauren has a chart of distinct project prices for house over the next several years.she must buy thehouse in one
-year and sell it in another and she must do so at a loss she wants to minimize ''' 
+year and sell it in another and she must do so at a loss she wants to minimize her financial loss
+find and print the minimum amount of money lauren must lose if she buys the house and reselles it within the next n years 
+
+
+''' 
 
 no_of_years = int(input("Enter the number of years "))
 house_price = []
