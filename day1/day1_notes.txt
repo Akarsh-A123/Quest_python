@@ -190,7 +190,7 @@ NOTE: The way integers are stored and the way floating point numbers are stored 
 float/double: IEEE standard formula is used to store the number.
 
 And hence, when an Arithmetic operation happens, the Data Type of both the operands must be same. If not, one of the 2 operands is implicitly type casted.
-
+---------------------------------------------------------------------------------------------------------------------------------
 TYPE CASTING:
 Conversion of the DT of a value (usually a number) to another.
 Explicit Casting: When the programmer adds the code(syntax) for the cast to happen:

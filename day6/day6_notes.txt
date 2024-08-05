@@ -1,0 +1,163 @@
+#########################################################
+Exception handling
+Syntax Error:
+Going against the rule(syntax) of the language.
+For example we cannot use PRINT in place of print.
+We cannot end a statement with semicolon.
+We should not use braces {} for blocks
+The Syntax errors is highlighted by the IDE or the Editor while tying the code.
+Once, the Syntax is correct, we can run the script (code/program).
+If syntax is correct every where in the code, then the code runs.
+
+
+
+When a error occurs at runtime, it is called as an Exception.
+Thus exception is the error which cannot be found by the compiler.
+Exception = RunTimeError
+
+When an exception occurs, the normal flow of code cannot be continued.
+Thus, the Python Interpreter stops the execution and THROWS the respective exception created.
+
+We say an Exception occured, which means in the code, the present instruction is trying to do something which is impossible.
+e.g:
+1. Trying to access 5th element in the list which has 4 elements.
+2. Trying to store the quotient of a division where the divider is zero.
+3. Trying to connect to the DB which is switched off.
+4. Trying to open a file for reading which doesn't exist.
+
+THE DIFFERENT TYPES OF EXCEPTIONS ARE:
+AssertionError:
+Raised when the assert statement fails.
+AttributeError:
+Raised on the attribute assignment or reference fails.
+EOFError:
+Raised when the input() function hits the end-of-file condition.
+FloatingPointError:
+Raised when a floating point operation fails.
+GeneratorExit:
+Raised when a generator's close() method is called.
+ImportError:
+Raised when the imported module is not found.
+IndexError:
+Raised when the index of a sequence is out of range.
+KeyError:
+Raised when a key is not found in a dictionary.
+KeyboardInterrupt:
+Raised when the user hits the interrupt key (Ctrl+c or delete).
+MemoryError:
+Raised when an operation runs out of memory.
+NameError:
+Raised when a variable is not found in the local or global scope.
+NotImplementedError:
+Raised by abstract methods.
+OSError:
+Raised when a system operation causes a system-related error.
+OverflowError:
+Raised when the result of an arithmetic operation is too large to be represented.
+ReferenceError:
+Raised when a weak reference proxy is used to access a garbage collected referent.
+RuntimeError:
+Raised when an error does not fall under any other category.
+StopIteration:
+Raised by the next() function to indicate that there is no further item to be returned by the iterator.
+SyntaxError:
+Raised by the parser when a syntax error is encountered.
+IndentationError:
+Raised when there is an incorrect indentation.
+TabError:
+Raised when the indentation consists of inconsistent tabs and spaces.
+SystemError:
+Raised when the interpreter detects internal error.
+SystemExit:
+Raised by the sys.exit() function.
+TypeError:
+Raised when a function or operation is applied to an object of an incorrect type.
+UnboundLocalError:
+Raised when a reference is made to a local variable in a function or method, but no value has been bound to that variable.
+UnicodeError:
+Raised when a Unicode-related encoding or decoding error occurs.
+UnicodeEncodeError:
+Raised when a Unicode-related error occurs during encoding.
+UnicodeDecodeError:
+Raised when a Unicode-related error occurs during decoding.
+UnicodeTranslateError:
+Raised when a Unicode-related error occurs during translation.
+ValueError:
+Raised when a function gets an argument of correct type but improper value.
+ZeroDivisionError:
+Raised when the second operand of a division or module operation is zero.
+
+IMPLEMENTATION OF EXCEPTION HANDLING:
+The code where we SUSPECT that exception may occur must be put into "try" block
+And the solution(s) for the exception if occurs must be put into "except" blocks(s).
+Note that the try-except blocks are defined inside a method/function.
+
+WHEN EXCEPTION DOESN'T OCCUR:
+When exception doesn't occur, all the statements of the "try" block runs and all the "except" blocks are skipped and the "finally" block statements are run (if present) and lastly the statements at the end of the function (after the except and finally blocks) are run (if present).
+
+WHEN EXCEPTION OCCURS:
+The statement inside the try block which creates the exception is not SUCCESSFULLY run. Hence, the control comes out of the try block, thus skipping the remaining statements inside the try block and an object of a respective exception class is created and it is thrown.
+Now this object is matched one by one with the except blocks in the order they are defined (similar to switch-case matching).
+
+If none of the except blocks match with the exception object, then the interpreter will stop the program execution and displays the exception type.
+
+Note that the exception object created in the try block can be received by a super-class type (exception class type reference).
+** Hence the except blocks types if are is-a related (inheritance), then the sub type except block must be defined before the super type except blocks (i.e., in the reverse order of derivation)
+
+Note: It is always safe to define the parent-most except block, i.e., of the type Exception.
+
+Note:
+1. Inside the except blocks, we can again define try-except blocks.
+2. We can define a try block inside a try block (nesting). 
+3. A try block must have at least one except block.
+4. There cannot be any statements inbetween the try and except blocks.
+5. except block(s) cannot exist without a try
+** 6. finally block is optional. But if present, it runs irrespective of whether the exception occured or not.
+7. Only one finally block can be defined for each try block.
+8. The inner/nested except and finally blocks of the nested try block runs only if the control goes to the inner/nested try block.
+
+eg: 
+    try:
+		num = 45 / 0
+	except ZeroDivisionError:# this block runs when zero division error occurs 
+		print('You tried divinding a number by Zero')
+    except: # it is generalised exception block it runs when try block throws and error 
+        print('invalid input')
+	finally: # finally block it run regardless of try or except block runs 
+		print('From Finally of 1st try block')
+	print('After 1st set of try-except-finally blocks')
+#########################################################
+PDB (Python Debugger)
+ 
+python -m pdb <name>.py[args] 		(begin the debugger)
+ 
+help[command] view a list of commands, or view help for a specific
+command
+ 
+within a python file:
+import pdb
+...
+pdb.set_trace() 
+Add the above call to begin the debugger at this line when the file is run normally.
+ 
+NAVIGATING CODE: (within the Pdb interpreter)
+l(ist) 		list 11 lines surrounding the current line
+ll          list the all codes 
+w(here) 	display the file and line number of the current line
+n(ext) 		execute the current line
+s(tep) 		step into function called at the current line
+r(eturn) 	execute until the current function’s return is
+encountered
+ 
+CONTROLLING EXECUTION:
+b[#] 		create a breakpoint at line [#]
+b 			list breakpoints and their indices
+c(ontinue)	execute until a breakpoint is encountered
+clear[#] 	clear breakpoint of index [#]
+ 
+CHANGING VARIABLES / INTERACTING WITH CODE:
+p<name> 	print value of the variable <name>
+!<expr> 	execute the expression <expr>
+NOTE: this acts just like a python interpreter
+run[args] 	restart the debugger with sys.argv arguments [args]
+q(uit) exit the debugger

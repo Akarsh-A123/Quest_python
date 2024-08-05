@@ -205,8 +205,18 @@ squares = []
 for i in range(10):
 	squares.append(i * i)
 print('Squares = ', squares)
---------------------------
+##########################################################################################
 List Comprehension
+
+
+List comprehension is a simple compact and easy to read method to create a list from an existing ittrable object
+it is method  to create a new list from already existing list 
+
+syntax:
+output      ittrable          condition  
+ ⬆️         ⬆️                ⬆️
+[ x   for  i in range(5) if x%2 ==2]
+
 [x**2 for x in range(10)]
 
 step1: [ ]
