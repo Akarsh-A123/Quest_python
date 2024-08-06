@@ -1,0 +1,7 @@
+1 tell me about file argument in print method?
+ans : it specifies where the function should write a given object .if not specified explicitly it is sys.stdout
+    it has 2 purpose print to STDERR and print to external file
+
+2 How do we round off to nearest digit ?
+    1 use round() function to round decimal greater than or equal to .05
+    2 use ceil() function to round decimal  greater than  .0

@@ -28,62 +28,91 @@ e.g:
 THE DIFFERENT TYPES OF EXCEPTIONS ARE:
 AssertionError:
 Raised when the assert statement fails.
+
 AttributeError:
 Raised on the attribute assignment or reference fails.
+
 EOFError:
 Raised when the input() function hits the end-of-file condition.
+
 FloatingPointError:
 Raised when a floating point operation fails.
+
 GeneratorExit:
 Raised when a generator's close() method is called.
+
 ImportError:
 Raised when the imported module is not found.
+
 IndexError:
 Raised when the index of a sequence is out of range.
+
 KeyError:
 Raised when a key is not found in a dictionary.
+
 KeyboardInterrupt:
 Raised when the user hits the interrupt key (Ctrl+c or delete).
+
 MemoryError:
 Raised when an operation runs out of memory.
+
 NameError:
 Raised when a variable is not found in the local or global scope.
+
 NotImplementedError:
 Raised by abstract methods.
+
 OSError:
 Raised when a system operation causes a system-related error.
+
 OverflowError:
 Raised when the result of an arithmetic operation is too large to be represented.
+
 ReferenceError:
 Raised when a weak reference proxy is used to access a garbage collected referent.
+
 RuntimeError:
 Raised when an error does not fall under any other category.
+
 StopIteration:
 Raised by the next() function to indicate that there is no further item to be returned by the iterator.
+
 SyntaxError:
 Raised by the parser when a syntax error is encountered.
+
 IndentationError:
 Raised when there is an incorrect indentation.
+
 TabError:
 Raised when the indentation consists of inconsistent tabs and spaces.
+
 SystemError:
 Raised when the interpreter detects internal error.
+
 SystemExit:
 Raised by the sys.exit() function.
+
 TypeError:
 Raised when a function or operation is applied to an object of an incorrect type.
+
 UnboundLocalError:
 Raised when a reference is made to a local variable in a function or method, but no value has been bound to that variable.
+
 UnicodeError:
 Raised when a Unicode-related encoding or decoding error occurs.
+
 UnicodeEncodeError:
 Raised when a Unicode-related error occurs during encoding.
+
 UnicodeDecodeError:
 Raised when a Unicode-related error occurs during decoding.
+
 UnicodeTranslateError:
 Raised when a Unicode-related error occurs during translation.
+
 ValueError:
 Raised when a function gets an argument of correct type but improper value.
+
 ZeroDivisionError:
 Raised when the second operand of a division or module operation is zero.
 
@@ -104,7 +133,7 @@ If none of the except blocks match with the exception object, then the interpret
 Note that the exception object created in the try block can be received by a super-class type (exception class type reference).
 ** Hence the except blocks types if are is-a related (inheritance), then the sub type except block must be defined before the super type except blocks (i.e., in the reverse order of derivation)
 
-Note: It is always safe to define the parent-most except block, i.e., of the type Exception.
+Note: It is always safe to define the parent-most except block, i.e. of the type Exception.
 
 Note:
 1. Inside the except blocks, we can again define try-except blocks.
@@ -126,6 +155,23 @@ eg:
 	finally: # finally block it run regardless of try or except block runs 
 		print('From Finally of 1st try block')
 	print('After 1st set of try-except-finally blocks')
+
+
+User definde exception handling 
+Exceptions need to be derived from the Exception class, either directly or indirectly. Although not mandatory, most of the exceptions are named as names that end in “Error” similar to the naming of the standard exceptions in python. For example,
+
+class XShapeException(Exception): # create an exception class 
+    def printError(self, errorMessage):
+        print(errorMessage)
+
+try:
+    if number_of_lines % 2 == 0:
+        raise XShapeException  # call the exception class when try block throws error
+    else:
+        # Logic to draw the X shape
+        print('Consider X shape is drawn')
+except XShapeException as e:
+    e.printError('Invalid input was given')
 #########################################################
 PDB (Python Debugger)
  
