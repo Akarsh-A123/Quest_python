@@ -42,44 +42,34 @@ Yes: Free pass for R-day parade for 2"""
 age = int(input("Enter age: "))
 gender = input("Enter gender: \nM. Male\nF. Female.")
 occupation = input("Enter occupation :\n s student \n w working  ")
-stay = input('Enter stay location : \n l locality \n h home ')
+stay = input('Enter stay location : \n l locality \n h hostel ')
+
+
+
+
+
 
 
 if age >=60 and gender == 'm':
-    if occupation == 's':
-        print('person cannot get student discount')
-    elif occupation =='w':
-        if stay == 'h':
-            print('Discount on Groceries ')
-        else:
-            print('15 % discount on all products ')
-elif age >= 40 and gender == 'f':
-    if occupation == 's':
-        print('person cannot get student discount')
-    elif occupation =='w':
-        if stay == 'h':
-            print('Discount on Groceries ')
-        else:
-            print('15 % discount on all products ')
-elif age < 60 and gender == 'm':
-        if occupation == 's':
-            if stay == 'h':
-                print('Discount on Groceries ')
-            else:
-                print('500 coupon on books ')
-        elif occupation =='w':
-            if stay == 'h':
-                print('Discount on Groceries ')
-            else:
-                print('100 rs coupon on titan fast track ')
-elif age < 40 and gender == 'f':
-    if occupation == 's':
-            if stay == 'h':
-                print('Discount on Groceries ')
-            else:
-                print('500 coupon on books')
-    elif occupation =='w':
-            if stay == 'h':
-                print('Discount on Groceries ')
-            else:
-                print('100 rs coupon on nika ')
+    print('15 % discount on all products ')
+elif age >= 45 and gender == 'f':
+        print('15 % discount on all products ')
+elif (age < 60 and age >= 45)  and gender == 'm':
+     print('100 rs fast track discount')
+elif age < 45 and gender == 'm':
+    print('100 rs fast track discount ')
+    if occupation == 's' and stay=='h' :
+            print('500 rs discount on books and discount on grocerries ')
+    elif occupation == 's' and stay =='l':
+          print('500 rs discount on books')
+elif(age < 45 and gender =='f'):
+     print('100 rs discount on nika ')
+     if occupation == 's' and stay =='h':
+          print('500 rs discount on books and discount on groceries')
+     elif occupation =='s' and stay =='l':
+          print('500 rs discount on books ')
+        
+
+
+
+
