@@ -40,9 +40,9 @@ try:
         #print(marklist)
 except:
     print('invalid input')
-#mark_lidt [maths ,english ,art ]
-# branch ece -1,mech -2 , bcom -3
-# preference list 1- maths, 2-art  
+#mark_list  [maths ,english ,art ]
+# branch ece-1,mech-2 , bcom -3
+# preference list [1- maths, 2-art]  
 
 if branch == 1:
     if 2 in preference_list:
