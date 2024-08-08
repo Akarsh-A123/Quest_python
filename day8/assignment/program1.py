@@ -20,22 +20,24 @@ try:
     while True:
         name = str(input('Enter your name '))
         branch = int(input('Enter Branch \n EcE 1 \n Mech  2 \n Bcome  3  '))
+        if (branch != 1) and (branch != 2) and (branch != 3):
+            print('invalid input enter correct branch ')
+            continue
         preference_list = [ int(i) for i in input("enter your preference if more than one seperate by ',' \n maths 1 \n art 2  ").split(',')]
         print(preference_list)
-        marklist = [int(i) for i in input("Enter marks for maths ,english,art ").split(',')]
-        #print(marklist)
-
         if len(preference_list) > 2 or len(preference_list) < 1:
             print('Invalid input enter correct preference ')
+            continue
         elif (1 not in preference_list) and (2 not in preference_list) :
             print('Invalid input enter correct preference list ')
-        elif (branch != 1) and (branch != 2) and (branch != 3):
-            print('invalid input enter correct branch ')
-        elif len(marklist) != 3:
+            continue
+        marklist = [int(i) for i in input("Enter marks for maths ,english,art ").split(',')]
+        if len(marklist) != 3:
             print('invalid input enter correct mark list ')
-        else:
-            print('all correct')
-            break
+            continue
+        print('all input correct')
+        break
+        #print(marklist)
 except:
     print('invalid input')
 #mark_lidt [maths ,english ,art ]
@@ -59,7 +61,7 @@ elif branch == 3:
     else:
         print('your prefrence does not match ')
 elif branch == 2:
-    if 2 in preference_list:
+    if 1 in preference_list:
         if marklist[0] > 90 and marklist[2] >90 and marklist[1] > 35:
             print("You are selected for Sales")
         else:
