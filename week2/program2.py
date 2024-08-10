@@ -5,9 +5,7 @@
 import shutil
 try:
     source = 'source/file1.txt'
-    destination = 'destination/file1.txt'
+    destination = 'destination/file2.txt'
     shutil.copyfile(source,destination)
 except FileNotFoundError:
     print('File is not fount')
-except:
-    print('File already exist')
