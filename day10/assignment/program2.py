@@ -1,8 +1,21 @@
 class data:
-    def __init__(self,age,occupation,stay):
+    def __init__(self,age,occupation,stay,gender):
         self.age = age
         self.occupation = occupation
         self.stay = stay
+        if age > 60  and gender == 'm' or age > 45 and gender =='f':
+            return True
+        else:
+            return False
+class senior(data):
+    if data == True:
+        print('15 % discount on all products ')
+class junior(data):
+    if data == False:
+        if gender == 'm':
+            print('100 rs discount on fast track')
+        elif gender =='f':
+            print('100 rs discount nika ') 
 class female(data):
     def discountcheck(self):
         if self.age >=45:
