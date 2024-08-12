@@ -18,7 +18,7 @@ class Vegitarian(Eatable):
         self.peelable = Peelable
         print('food is vegitarian')
 class Non_vegitarian(Eatable):
-    def __init__(self,carbs,fat,protien,Peelable):
+    def __init__(self,carbs,fat,protien,boneless):
         super.__init__(carbs,protien,fat)
         self.boneless = boneless
         print('Food is non vegitarian')
