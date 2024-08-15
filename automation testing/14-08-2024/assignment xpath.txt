@@ -1,0 +1,36 @@
+buss home page
+
+//input[@id='travelDate']
+
+//input[@id='fromCity']
+
+//input[@id='toCity']
+
+//button[@id='search_button']
+
+
+form bus list page 
+
+from input box
+//input[@id='from']
+
+ to input box
+//input[@id='to']
+
+date
+//input[@data-testid='travelDate']
+
+search button
+//button[contains(@class,'SearchBtn')]
+
+
+Ac filter button
+
+//div[@class='filterContainer']//span[text()='Non AC']
+//div[@class='filterContainer']//span[text()='AC']
+
+Non AC text 
+//div[contains(@class,'busCardContainer')]//p[contains(text(),'Non A/C')]
+
+AC text
+//div[contains(@class,'busCardContainer')]//p[contains(text(),'A/C')]

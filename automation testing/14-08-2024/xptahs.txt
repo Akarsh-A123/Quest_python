@@ -1,0 +1,45 @@
+X-paths (make my trip)
+
+
+window seat: //p[text() ="A1 Travels"]/ancestor::div[contains(@class,"makeFlex false")]/following-sibling::div//ul[text()=" Window Seats"]
+
+Arriving date: 20 August
+ 
+//p[text()='A1 Travels']/ancestor::div[@class="makeFlex false"]//span[@class="font18 blackText appendRight4 latoRegular"]/following-sibling::span[@class="font14 secondaryTxt capText"]
+
+primo logo only for A1 Travels -//span[contains(@class,"newPrimoIcon")]//ancestor::div[contains(@class,"busCard")]//p[text()="A1 Travels"]
+
+[11:41 AM] sneha mathai (Unverified)
+Live Trackingicon - //p[text()='A1 Travels']/ancestor::div[contains(@class,'busCard')]//span[contains(@class,"liveTrackingIcon")]
+ 
+
+A1 Travels departure time 
+
+//p[text()='A1 Travels']/ancestor::div[@class='busCardContainer ']//span[contains(@class,'latoBlack blackText')]
+ 
+ 
+ //p[text()='A1 Travels']/ancestor::div[@class="makeFlex false"]//span[contains(@class,"latoBlack")]/following-sibling::span[@class="font14 secondaryTxt capText"]
+ 
+ [11:42 AM] Ashly Joshy (Unverified)
+seats left : //p[text()='A1 Travels']/ancestor::div[contains(@class,'busCard false')]//ul/following-sibling::div[contains(@class,' hrtlCenter secondaryTxt font12')]/ul
+
+ [11:42 AM] Albin Sabu (Unverified)
+Duration of travel: //p[text()="A1 Travels"]//ancestor::div[contains(@class,"makeFlex false")]//div[contains(@class,"secondaryTxt")]
+ 
+ [11:42 AM] Devika Ashok (Unverified)
+Rating
+
+//p[text()='A1 Travels']/ancestor::div[(@class='busCardContainer ')]//span[contains(@class,'starIcon')]/following-sibling::span
+ 
+ 
+ [11:42 AM] Arsha T J (Unverified)
+Price: 
+//p[text()='A1 Travels']/ancestor::div[(@class='busCardContainer ')]//span[(@id='price')]
+
+
+[11:43 AM] Ameen Sha (Unverified)
+Arrival Time: //p[text()="A1 Travels"]/ancestor::div[contains(@class,"busInfo")]/following-sibling:: div[contains(@class,"hrtlCenter")]/div/span[contains(@class,"latoRegular")]
+ 
+ [11:44 AM] Gayathri M
+Ratings: //p[text()='A1 Travels']/ancestor::div//div[@class="font12 secondaryTxt"]/text()
+ 

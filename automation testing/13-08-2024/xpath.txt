@@ -1,0 +1,21 @@
+3 attributes
+//input[@id="tnb-google-search-input"]
+//input[@placeholder="Search..."]
+//input[@aria-label="Search field"]
+
+3 different levels
+   //input[@id="tnb-google-search-input"]
+   //div[@id="tnb-google-search-inner-container"]/input 
+   //div[@id="tnb-google-search-container"]/div[@id="tnb-google-search-inner-container"]/input  
+
+parent
+//div[@id='tnb-google-search-inner-container']/parent::div//input[@id='tnb-google-search-input']
+
+ancestor
+//div[@id='tnb-google-search-submit-btn']//ancestor::div[@id='tnb-google-search-container']//input
+
+following sibling
+//div[@id='tnb-google-search-submit-btn']//ancestor::div[@id='pagetop']//following-sibling::div//div[@id='tnb-google-search-inner-container']/input 
+
+
+//a[@title='Sign Up to Improve Your Learning Experience']/parent::div/ancestor::div[@id='pagetop']//div/following-sibling::div                                                                                                                                                                                                                                                                                                                             

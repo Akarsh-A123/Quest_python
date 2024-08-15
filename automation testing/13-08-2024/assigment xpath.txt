@@ -1,0 +1,11 @@
+//p[text()='A1 Travels']/ancestor::div[@class='busCardContainer ']//span[@class='font18 latoBlack blackText appendRight4']
+
+A1 Travels arival time 
+//p[text()='A1 Travels']/ancestor::div[@class='busCardContainer ']//span[contains(@class,'latoBlack blackText')]
+
+side section
+//li[@class='containerHorizontal']/descendant::div[@style='cursor: pointer;']
+
+//li[@class='containerHorizontal']/descendant::ul[@class='dropdownWrap']//span[text()='Ettimadai']
+
+//li[@class='containerHorizontal']/descendant::ul[@class='dropdownWrap']//span[@class='checkmarkOuter']/following-sibling::span
