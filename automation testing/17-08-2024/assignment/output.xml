@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.9 on win32)" generated="2024-08-18T22:09:12.430749" rpa="false" schemaversion="5">
+<suite id="s1" name="Makemytrip" source="C:\pytohn_learning\Quest_python\automation testing\17-08-2024\assignment\makemytrip.robot">
+<test id="s1-t1" name="TC-001 Verify if a user is able to filter bus according to their seat preference" line="8">
+<kw name="open make my trip">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:12.746060" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-08-18T22:09:12.746060" elapsed="2.186179"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:14.933237" level="INFO">Opening url 'https://www.makemytrip.com'</msg>
+<arg>url=https://www.makemytrip.com</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-08-18T22:09:14.933237" elapsed="9.535789"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-08-18T22:09:24.469026" elapsed="0.108626"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//span[@class='commonModal__close']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-18T22:09:24.577652" elapsed="1.451516"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:26.029168" level="INFO">Clicking element '//span[@class='commonModal__close']'.</msg>
+<arg>//span[@class='commonModal__close']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:26.029168" elapsed="0.149631"/>
+</kw>
+<status status="PASS" start="2024-08-18T22:09:12.746060" elapsed="13.432739"/>
+</kw>
+<kw name="Search bus">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:26.178799" level="INFO">Clicking element '//li[@class='menu_Buses']'.</msg>
+<arg>//li[@class='menu_Buses']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:26.178799" elapsed="0.226820"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>fromCity</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-18T22:09:26.406613" elapsed="4.108892"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:30.515505" level="INFO">Clicking element 'fromCity'.</msg>
+<arg>fromCity</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:30.515505" elapsed="0.102613"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[contains(@placeholder,'From')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-18T22:09:30.618118" elapsed="0.540766"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:31.158884" level="INFO">Typing text 'Coimbatore' into text field '//input[contains(@placeholder,'From')]'.</msg>
+<arg>//input[contains(@placeholder,'From')]</arg>
+<arg>${fromcity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:31.158884" elapsed="0.184132"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[contains(@class,'autosuggest')]//span[contains(text(),'${fromcity},')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-18T22:09:31.344047" elapsed="1.211993"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:32.556040" level="INFO">Clicking element '//div[contains(@class,'autosuggest')]//span[contains(text(),'Coimbatore,')]'.</msg>
+<arg>//div[contains(@class,'autosuggest')]//span[contains(text(),'${fromcity},')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:32.556040" elapsed="0.109914"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:32.665954" level="INFO">Clicking element 'toCity'.</msg>
+<msg time="2024-08-18T22:09:33.940431" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-60.png"&gt;&lt;img src="selenium-screenshot-60.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-08-18T22:09:33.940431" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input id="toCity" data-cy="toCityVal" type="text" class="bussw_inputField font30 latoBlack" readonly="" value="Kanpur, Uttar Pradesh"&gt; is not clickable at point (818, 296). Other element would receive the click: &lt;input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1" class="react-autosuggest__input react-autosuggest__input--open react-autosuggest__input--focused" placeholder="To" title="To" value=""&gt;
+  (Session info: chrome=127.0.6533.120)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76BFA9642+30946]
+	(No symbol) [0x00007FF76BF5E3D9]
+	(No symbol) [0x00007FF76BE56FDA]
+	(No symbol) [0x00007FF76BEAFEEE]
+	(No symbol) [0x00007FF76BEAD962]
+	(No symbol) [0x00007FF76BEAAE7B]
+	(No symbol) [0x00007FF76BEAA095]
+	(No symbol) [0x00007FF76BE9C271]
+	(No symbol) [0x00007FF76BECCA6A]
+	(No symbol) [0x00007FF76BE9BBB6]
+	(No symbol) [0x00007FF76BECCC80]
+	(No symbol) [0x00007FF76BEEB041]
+	(No symbol) [0x00007FF76BECC813]
+	(No symbol) [0x00007FF76BE9A6E5]
+	(No symbol) [0x00007FF76BE9B021]
+	GetHandleVerifier [0x00007FF76C0DF84D+1301229]
+	GetHandleVerifier [0x00007FF76C0EBDC7+1351783]
+	GetHandleVerifier [0x00007FF76C0E2A13+1313971]
+	GetHandleVerifier [0x00007FF76BFDDD16+245686]
+	(No symbol) [0x00007FF76BF6759F]
+	(No symbol) [0x00007FF76BF63814]
+	(No symbol) [0x00007FF76BF639A2]
+	(No symbol) [0x00007FF76BF5A3FF]
+	BaseThreadInitThunk [0x00007FFCFC64257D+29]
+	RtlUserThreadStart [0x00007FFCFD16AF28+40]
+</msg>
+<arg>toCity</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-08-18T22:09:32.665954" elapsed="1.274477">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input id="toCity" data-cy="toCityVal" type="text" class="bussw_inputField font30 latoBlack" readonly="" value="Kanpur, Uttar Pradesh"&gt; is not clickable at point (818, 296). Other element would receive the click: &lt;input type="text" autocomplete="off" aria-autocomplete="list" aria-controls="react-autowhatever-1" class="react-autosuggest__input react-autosuggest__input--open react-autosuggest__input--focused" placeholder="To" title="To" value=""&gt;
+  (Session info: chrome=127.0.6533.120)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76BFA9642+30946]
+	(No symbol) [0x00007FF76BF5E3D9]
+	(No symbol) [0x00007FF76BE56FDA]
+	(No symbol) [0x00007FF76BEAFEEE]
+	(No symbol) [0x00007FF76BEAD962]
+	(No symbol) [0x00007FF76BEAAE7B]
+	(No symbol) [0x00007FF76BEAA095]
+	(No symbol) [0x00007FF76BE9C271]
+	(No symbol) [0x00007FF76BECCA6A]
+	(No symbol) [0x00007FF76BE9BBB6]
+	(No symbol) [0x00007FF76BECCC80]
+	(No symbol) [0x00007FF76BEEB041]
+	(No symbol) [0x00007FF76BECC813]
+	(No symbol) [0x00007FF76BE9A6E5]
+	(No symbol) [0x00007FF76BE9B021]
+	GetHandleVerifier [0x00007FF76C0DF84D+1301229]
+	GetHandleVerifier [0x00007FF76C0EBDC7+1351783]
+	GetHandleVerifier [0x00007FF76C0E2A13+1313971]
+	GetHandleVerifier [0x00007FF76BFDDD16+245686]
+	(No symbol) [0x00007FF76BF6759F]
+	(No symbol) [0x00007FF76BF63814]
+	(No symbol) [0x00007FF76BF639A2]
+	(No symbol) [0x00007FF76BF5A3FF]
+	BaseThreadInitThunk [0x00007FFCFC64257D+29]
+	RtlUserThreadStart [0x00007FFCFD16AF28+40]
+</status>
+</kw>
+<arg>Click Element</arg>
+<arg>toCity</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-08-18T22:09:32.665954" elapsed="1.274477"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[contains(@placeholder,'To')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-18T22:09:33.940431" elapsed="0.031215"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:33.971646" level="INFO">Typing text 'Trivandrum' into text field '//input[contains(@placeholder,'To')]'.</msg>
+<arg>//input[contains(@placeholder,'To')]</arg>
+<arg>${tocity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:33.971646" elapsed="0.129082"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[contains(@class,'autosuggest')]//span[contains(text(),'(${tocity})')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-18T22:09:34.100728" elapsed="0.706883"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:34.808638" level="INFO">Clicking element '//div[contains(@class, 'autosuggest')]//span[contains(text(),'Trivandrum,') or contains(text(),'(Trivandrum),')]'.</msg>
+<arg>//div[contains(@class, 'autosuggest')]//span[contains(text(),'${toCity},') or contains(text(),'(${toCity}),')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:34.807611" elapsed="0.087994"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:34.895605" level="INFO">Clicking element 'travelDate'.</msg>
+<msg time="2024-08-18T22:09:36.154877" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-61.png"&gt;&lt;img src="selenium-screenshot-61.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-08-18T22:09:36.154877" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input id="travelDate" type="text" data-cy="travelDateVal" class="bussw_inputField font20" readonly="" value=""&gt; is not clickable at point (1155, 293). Other element would receive the click: &lt;div class="calHeading makeFlex"&gt;...&lt;/div&gt;
+  (Session info: chrome=127.0.6533.120)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76BFA9642+30946]
+	(No symbol) [0x00007FF76BF5E3D9]
+	(No symbol) [0x00007FF76BE56FDA]
+	(No symbol) [0x00007FF76BEAFEEE]
+	(No symbol) [0x00007FF76BEAD962]
+	(No symbol) [0x00007FF76BEAAE7B]
+	(No symbol) [0x00007FF76BEAA095]
+	(No symbol) [0x00007FF76BE9C271]
+	(No symbol) [0x00007FF76BECCA6A]
+	(No symbol) [0x00007FF76BE9BBB6]
+	(No symbol) [0x00007FF76BECCC80]
+	(No symbol) [0x00007FF76BEEB041]
+	(No symbol) [0x00007FF76BECC813]
+	(No symbol) [0x00007FF76BE9A6E5]
+	(No symbol) [0x00007FF76BE9B021]
+	GetHandleVerifier [0x00007FF76C0DF84D+1301229]
+	GetHandleVerifier [0x00007FF76C0EBDC7+1351783]
+	GetHandleVerifier [0x00007FF76C0E2A13+1313971]
+	GetHandleVerifier [0x00007FF76BFDDD16+245686]
+	(No symbol) [0x00007FF76BF6759F]
+	(No symbol) [0x00007FF76BF63814]
+	(No symbol) [0x00007FF76BF639A2]
+	(No symbol) [0x00007FF76BF5A3FF]
+	BaseThreadInitThunk [0x00007FFCFC64257D+29]
+	RtlUserThreadStart [0x00007FFCFD16AF28+40]
+</msg>
+<arg>travelDate</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-08-18T22:09:34.895605" elapsed="1.259272">ElementClickInterceptedException: Message: element click intercepted: Element &lt;input id="travelDate" type="text" data-cy="travelDateVal" class="bussw_inputField font20" readonly="" value=""&gt; is not clickable at point (1155, 293). Other element would receive the click: &lt;div class="calHeading makeFlex"&gt;...&lt;/div&gt;
+  (Session info: chrome=127.0.6533.120)
+Stacktrace:
+	GetHandleVerifier [0x00007FF76BFA9642+30946]
+	(No symbol) [0x00007FF76BF5E3D9]
+	(No symbol) [0x00007FF76BE56FDA]
+	(No symbol) [0x00007FF76BEAFEEE]
+	(No symbol) [0x00007FF76BEAD962]
+	(No symbol) [0x00007FF76BEAAE7B]
+	(No symbol) [0x00007FF76BEAA095]
+	(No symbol) [0x00007FF76BE9C271]
+	(No symbol) [0x00007FF76BECCA6A]
+	(No symbol) [0x00007FF76BE9BBB6]
+	(No symbol) [0x00007FF76BECCC80]
+	(No symbol) [0x00007FF76BEEB041]
+	(No symbol) [0x00007FF76BECC813]
+	(No symbol) [0x00007FF76BE9A6E5]
+	(No symbol) [0x00007FF76BE9B021]
+	GetHandleVerifier [0x00007FF76C0DF84D+1301229]
+	GetHandleVerifier [0x00007FF76C0EBDC7+1351783]
+	GetHandleVerifier [0x00007FF76C0E2A13+1313971]
+	GetHandleVerifier [0x00007FF76BFDDD16+245686]
+	(No symbol) [0x00007FF76BF6759F]
+	(No symbol) [0x00007FF76BF63814]
+	(No symbol) [0x00007FF76BF639A2]
+	(No symbol) [0x00007FF76BF5A3FF]
+	BaseThreadInitThunk [0x00007FFCFC64257D+29]
+	RtlUserThreadStart [0x00007FFCFD16AF28+40]
+</status>
+</kw>
+<arg>Click Element</arg>
+<arg>travelDate</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-08-18T22:09:34.895605" elapsed="1.259272"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[contains(text(),'August')]/ancestor::div[@class='DayPicker-Month']//div[contains(text(),'20') and @class='DayPicker-Day']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-18T22:09:36.154877" elapsed="0.015633"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:36.170510" level="INFO">Clicking element '//div[contains(text(),'August')]/ancestor::div[@class='DayPicker-Month']//div[contains(text(),'20') and @class='DayPicker-Day']'.</msg>
+<arg>//div[contains(text(),'August')]/ancestor::div[@class='DayPicker-Month']//div[contains(text(),'20') and @class='DayPicker-Day']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:36.170510" elapsed="0.085697"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:36.256207" level="INFO">Clicking element 'search_button'.</msg>
+<arg>search_button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:36.256207" elapsed="19.284684"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@class="busListingContainer"]//p[contains(text(),'found')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-18T22:09:55.541885" elapsed="0.031523"/>
+</kw>
+<arg>Coimbatore</arg>
+<arg>Trivandrum</arg>
+<status status="PASS" start="2024-08-18T22:09:26.178799" elapsed="29.394609"/>
+</kw>
+<kw name="Select filter">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:55.573408" level="INFO">Clicking element 'toggle_buses'.</msg>
+<arg>toggle_buses</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:55.573408" elapsed="0.159164"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:55.750074" level="INFO">${initialcount} = 16</msg>
+<var>${initialcount}</var>
+<arg>//div[@class="busCardContainer "]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:55.732572" elapsed="0.017502"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:55.751073" level="INFO">Clicking element '//div[contains(text(),'AC')]/../..//span[contains(text(),'AC')]'.</msg>
+<arg>//div[contains(text(),'${filterType}')]/../..//span[contains(text(),'${filterExactText}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:55.750074" elapsed="0.116467"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain" owner="SeleniumLibrary">
+<arg>//p[contains(text(),'found') or contains(text(),'${initialcount}')]</arg>
+<doc>Waits until ``text`` disappears from the current page.</doc>
+<status status="PASS" start="2024-08-18T22:09:55.866541" elapsed="0.022256"/>
+</kw>
+<arg>AC</arg>
+<arg>AC</arg>
+<status status="PASS" start="2024-08-18T22:09:55.573408" elapsed="0.315389"/>
+</kw>
+<kw name="Get bus id">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-08-18T22:09:55.888797" level="INFO">@{allACBus} = [ ]</msg>
+<var>@{allACBus}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-08-18T22:09:55.888797" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:55.888797" level="INFO">Clicking element '//div[@id="toggle_buses" and not(contains(@class,'active'))]'.</msg>
+<msg time="2024-08-18T22:09:56.020123" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-62.png"&gt;&lt;img src="selenium-screenshot-62.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-08-18T22:09:56.020123" level="FAIL">Element with locator '//div[@id="toggle_buses" and not(contains(@class,'active'))]' not found.</msg>
+<arg>//div[@id="toggle_buses" and not(contains(@class,'active'))]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-08-18T22:09:55.888797" elapsed="0.131326">Element with locator '//div[@id="toggle_buses" and not(contains(@class,'active'))]' not found.</status>
+</kw>
+<arg>Click element</arg>
+<arg>//div[@id="toggle_buses" and not(contains(@class,'active'))]</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-08-18T22:09:55.888797" elapsed="0.131326"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:56.036144" level="INFO">${numberofbusses} = 8</msg>
+<var>${numberofbusses}</var>
+<arg>//div[contains(@class,'busCardContainer')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.020123" elapsed="0.016021"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.036144" level="INFO">${numberofbusses} = 9</msg>
+<var>${numberofbusses}</var>
+<arg>$numberofbusses+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.036144" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:56.069912" level="INFO">${ACBus} = Swift-Gajaraj Multi Axle Volvo AC Sleeper Bus (2+1)</msg>
+<var>${ACBus}</var>
+<arg>(//div[contains(@class,'busCardContainer')]//p[contains(@class,'secondaryTxt')])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.036144" elapsed="0.033768"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.069912" level="INFO">Swift-Gajaraj Multi Axle Volvo AC Sleeper Bus (2+1)</msg>
+<arg>${ACBus}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.069912" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${allACBus}</arg>
+<arg>${ACBus}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.069912" elapsed="0.000000"/>
+</kw>
+<var name="${index}">1</var>
+<status status="PASS" start="2024-08-18T22:09:56.036144" elapsed="0.033768"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:56.083441" level="INFO">${ACBus} = AC MULTI AXLE</msg>
+<var>${ACBus}</var>
+<arg>(//div[contains(@class,'busCardContainer')]//p[contains(@class,'secondaryTxt')])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.069912" elapsed="0.013529"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.083441" level="INFO">AC MULTI AXLE</msg>
+<arg>${ACBus}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.083441" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${allACBus}</arg>
+<arg>${ACBus}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.083441" elapsed="0.000000"/>
+</kw>
+<var name="${index}">2</var>
+<status status="PASS" start="2024-08-18T22:09:56.069912" elapsed="0.013529"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:56.114704" level="INFO">${ACBus} = A/C Seater / Sleeper (2+1)</msg>
+<var>${ACBus}</var>
+<arg>(//div[contains(@class,'busCardContainer')]//p[contains(@class,'secondaryTxt')])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.083441" elapsed="0.031263"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.114704" level="INFO">A/C Seater / Sleeper (2+1)</msg>
+<arg>${ACBus}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.114704" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${allACBus}</arg>
+<arg>${ACBus}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.114704" elapsed="0.000000"/>
+</kw>
+<var name="${index}">3</var>
+<status status="PASS" start="2024-08-18T22:09:56.083441" elapsed="0.031263"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:56.130327" level="INFO">${ACBus} = Bharat Benz A/C Semi Sleeper (2+2)</msg>
+<var>${ACBus}</var>
+<arg>(//div[contains(@class,'busCardContainer')]//p[contains(@class,'secondaryTxt')])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.114704" elapsed="0.015623"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.130327" level="INFO">Bharat Benz A/C Semi Sleeper (2+2)</msg>
+<arg>${ACBus}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.130327" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${allACBus}</arg>
+<arg>${ACBus}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.130327" elapsed="0.000000"/>
+</kw>
+<var name="${index}">4</var>
+<status status="PASS" start="2024-08-18T22:09:56.114704" elapsed="0.015623"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:56.161575" level="INFO">${ACBus} = VE A/C Sleeper (2+1)</msg>
+<var>${ACBus}</var>
+<arg>(//div[contains(@class,'busCardContainer')]//p[contains(@class,'secondaryTxt')])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.130327" elapsed="0.031248"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.161575" level="INFO">VE A/C Sleeper (2+1)</msg>
+<arg>${ACBus}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.161575" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${allACBus}</arg>
+<arg>${ACBus}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.161575" elapsed="0.000000"/>
+</kw>
+<var name="${index}">5</var>
+<status status="PASS" start="2024-08-18T22:09:56.130327" elapsed="0.031248"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:56.177595" level="INFO">${ACBus} = A/C Sleeper (2+1)</msg>
+<var>${ACBus}</var>
+<arg>(//div[contains(@class,'busCardContainer')]//p[contains(@class,'secondaryTxt')])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.161575" elapsed="0.016020"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.177595" level="INFO">A/C Sleeper (2+1)</msg>
+<arg>${ACBus}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.177595" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${allACBus}</arg>
+<arg>${ACBus}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.177595" elapsed="0.000000"/>
+</kw>
+<var name="${index}">6</var>
+<status status="PASS" start="2024-08-18T22:09:56.161575" elapsed="0.016020"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:56.208855" level="INFO">${ACBus} = A/C Sleeper (2+1)</msg>
+<var>${ACBus}</var>
+<arg>(//div[contains(@class,'busCardContainer')]//p[contains(@class,'secondaryTxt')])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.177595" elapsed="0.031260"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.208855" level="INFO">A/C Sleeper (2+1)</msg>
+<arg>${ACBus}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.208855" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${allACBus}</arg>
+<arg>${ACBus}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.208855" elapsed="0.000000"/>
+</kw>
+<var name="${index}">7</var>
+<status status="PASS" start="2024-08-18T22:09:56.177595" elapsed="0.031260"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-18T22:09:56.224479" level="INFO">${ACBus} = VE A/C Seater / Sleeper (2+1)</msg>
+<var>${ACBus}</var>
+<arg>(//div[contains(@class,'busCardContainer')]//p[contains(@class,'secondaryTxt')])[${index}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.208855" elapsed="0.015624"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.224479" level="INFO">VE A/C Seater / Sleeper (2+1)</msg>
+<arg>${ACBus}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.224479" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${allACBus}</arg>
+<arg>${ACBus}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.224479" elapsed="0.000000"/>
+</kw>
+<var name="${index}">8</var>
+<status status="PASS" start="2024-08-18T22:09:56.208855" elapsed="0.015624"/>
+</iter>
+<var>${index}</var>
+<value>1</value>
+<value>${numberofbusses}</value>
+<status status="PASS" start="2024-08-18T22:09:56.036144" elapsed="0.188335"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-08-18T22:09:56.224479" level="INFO">['Swift-Gajaraj Multi Axle Volvo AC Sleeper Bus (2+1)', 'AC MULTI AXLE', 'A/C Seater / Sleeper (2+1)', 'Bharat Benz A/C Semi Sleeper (2+2)', 'VE A/C Sleeper (2+1)', 'A/C Sleeper (2+1)', 'A/C Sleeper (2+1)', 'VE A/C Seater / Sleeper (2+1)']</msg>
+<arg>${allACBus}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.224479" elapsed="0.000000"/>
+</kw>
+<kw name="List Should Not Contain Value" owner="Collections">
+<arg>${allACBus}</arg>
+<arg>Non AC</arg>
+<doc>Fails if the ``value`` is found from ``list``.</doc>
+<status status="PASS" start="2024-08-18T22:09:56.224479" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-08-18T22:09:55.888797" elapsed="0.335682"/>
+</kw>
+<status status="PASS" start="2024-08-18T22:09:12.746060" elapsed="43.478419"/>
+</test>
+<status status="PASS" start="2024-08-18T22:09:12.430749" elapsed="43.793730"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Makemytrip">Makemytrip</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

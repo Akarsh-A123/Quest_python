@@ -24,13 +24,14 @@ search button
 //button[contains(@class,'SearchBtn')]
 
 
-Ac filter button
+Ac button xpath : //div[@class='filterContainer']//span[text()='Non AC']
 
-//div[@class='filterContainer']//span[text()='Non AC']
-//div[@class='filterContainer']//span[text()='AC']
+Non Ac button xpath : //div[@class='filterContainer']//span[text()='AC']
 
-Non AC text 
-//div[contains(@class,'busCardContainer')]//p[contains(text(),'Non A/C')]
+Non AC text xpath : //div[contains(@class,'busCardContainer')]//p[contains(text(),'Non A/C')]
 
-AC text
-//div[contains(@class,'busCardContainer')]//p[contains(text(),'A/C')]
+AC text xpath : //div[contains(@class,'busCardContainer')]//p[not(contains(text(),'Non A/C')) and contains(text(),'A/C')]
+
+or 
+
+//div[@class='busCardContainer ']//p[contains(@class,'secondaryTxt')]
